@@ -1,0 +1,53 @@
+﻿@model IEnumerable<eventease.Models.EVENTS>
+
+@{
+    ViewData["Title"] = "EVENTS Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EVENTS_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EVENT_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPTIONS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VENUES)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EVENTS_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EVENT_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRIPTIONS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VENUES.LOCATIONS)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EVENTS_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EVENTS_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EVENTS_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

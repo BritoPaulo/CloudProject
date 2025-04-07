@@ -1,0 +1,47 @@
+﻿@model IEnumerable<eventease.Models.BOOKINGS>
+
+@{
+    ViewData["Title"] = "BOOKINGS Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EVENTS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VENUES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BOOKING_DATE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EVENTS.EVENTS_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VENUES.LOCATIONS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOKING_DATE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BOOKINGS_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BOOKINGS_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BOOKINGS_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

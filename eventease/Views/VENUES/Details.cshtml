@@ -1,0 +1,42 @@
+﻿@model eventease.Models.VENUES
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VENUES</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VENUES_NAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VENUES_NAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LOCATIONS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LOCATIONS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CAPACITY)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CAPACITY)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IMAGEURL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IMAGEURL)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.VENUES_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
